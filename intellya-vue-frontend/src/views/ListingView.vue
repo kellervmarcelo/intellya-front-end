@@ -6,13 +6,14 @@
     <Suspense>
       <AsyncUsersTable />
       <template #fallback>
-        Loading...
+        <UsersListSkeleton />
       </template>
     </Suspense>
   </main>
 </template>
 
 <script setup lang="ts">
+import UsersListSkeleton from '@/components/UsersListSkeleton.vue';
 import AsyncUsersTable from '../components/AsyncUsersTable.vue'
 
 </script>

@@ -26,12 +26,9 @@
 </template>
 
 <script setup lang="ts">
-import { useUsersStore } from '@/stores/users'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 
-const userStore = useUsersStore()
-console.log(userStore.users)
 
 axios.defaults.headers.common = {
   'X-API-Key': '70335667-2408-4011-a994-ea3e7042d96f'

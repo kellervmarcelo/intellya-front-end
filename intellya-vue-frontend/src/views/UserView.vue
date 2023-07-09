@@ -6,13 +6,14 @@
     <Suspense>
       <AsyncUserInfo :user-id="user_id"/>
       <template #fallback>
-        Loading...
+        <UserInfoSkeleton />
       </template>
     </Suspense>
   </main>
 </template>
 
 <script setup lang="ts">
+import UserInfoSkeleton from '@/components/UserInfoSkeleton.vue';
 import AsyncUserInfo from '../components/AsyncUserInfo.vue';
 import { useRoute } from 'vue-router';
 

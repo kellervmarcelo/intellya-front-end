@@ -7,7 +7,7 @@
         </RouterLink>
         <div>
           <RouterLink :to="{ name: 'home' }" class="font-semibold border-b-2 border-intellya-primary h-full py-6">
-            Usuários {{ query }}
+            Usuários
           </RouterLink>
         </div>
       </nav>

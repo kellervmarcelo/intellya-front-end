@@ -5,6 +5,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "verbatimModuleSyntax": false,
     "composite": true,
     "baseUrl": ".",
     "paths": {

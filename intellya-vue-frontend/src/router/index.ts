@@ -7,14 +7,28 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: ListingView
+      component: ListingView,
+      meta: {
+        title: "Usuários | Intellya"
+      }
     },
     {
       path: '/user/:id',
       name: 'user', 
-      component: () => import('../views/UserView.vue')
+      component: () => import('../views/UserView.vue'),
+      meta: { 
+        title: "Usuario"
+      }
     }
   ]
+})
+
+router.beforeEach((to, from, next) =>{
+  document.title = `${
+    to.params.id ? `Usuário ${to.params.id}` : to.meta.title
+  } | Intellya`
+
+  next();
 })
 
 export default router

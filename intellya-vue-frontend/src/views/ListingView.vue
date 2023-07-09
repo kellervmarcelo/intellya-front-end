@@ -1,5 +1,5 @@
 <template>
-  <main class="container mt-11">
+  <main class="container mt-11 mb-5">
     <h1 class="text-3xl font-semibold mb-3">Listagem de Usuários</h1>
     <p class="mb-5">Visualize os usuários que acessam sua plataforma</p>
 

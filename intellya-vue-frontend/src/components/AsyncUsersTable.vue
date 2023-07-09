@@ -15,7 +15,7 @@
           <td class="font-semibold px-6 py-4">{{ user.id }}</td>
           <td class="text-gray-600 font-medium px-6 py-4">{{ user.name }}</td>
           <td class="text-gray-600 font-medium px-6 py-4">{{ user.email }}</td>
-          <td class="text-gray-600 font-medium px-6 py-4">{{ user.role }}</td>
+          <td class="text-gray-600 font-medium px-6 py-4">{{ formattedRole(user.role) }}</td>
           <td class="capitalize text-intellya-secondary font-semibold px-6 py-4 cursor-pointer hover:text-opacity-50" @click="goToUser(user.id)">
             visualizar
           </td>
@@ -26,17 +26,14 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios'
 import { useRouter } from 'vue-router'
 import UsersApi from '../services/UsersApi'
 
-
-axios.defaults.headers.common = {
-  'X-API-Key': '70335667-2408-4011-a994-ea3e7042d96f'
-}
-
 const { data } = await UsersApi.getUsers()
 const router = useRouter()
+const formattedRole = (role : string) => {
+  return role === 'member'? 'Membro' : 'Admin'
+}
 
 const goToUser = (id: number) => {
   router.push({

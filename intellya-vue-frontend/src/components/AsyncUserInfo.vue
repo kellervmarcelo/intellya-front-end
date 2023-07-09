@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios'
+import UsersApi from '@/services/UsersApi';
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -40,11 +40,7 @@ const props = defineProps({
   }
 })
 
-axios.defaults.headers.common = {
-  'X-API-Key': '70335667-2408-4011-a994-ea3e7042d96f'
-}
-
-const { data } = await axios.get(`http://localhost:3000/users/${props.userId}`)
+const { data } = await UsersApi.getUser(props.userId)
 const formattedStatus = computed(() => {
   return data.active ? 'Ativo' : 'Inativo'
 })

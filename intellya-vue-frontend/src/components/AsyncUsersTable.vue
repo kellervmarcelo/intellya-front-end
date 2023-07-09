@@ -28,13 +28,14 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { useRouter } from 'vue-router'
+import UsersApi from '../services/UsersApi'
 
 
 axios.defaults.headers.common = {
   'X-API-Key': '70335667-2408-4011-a994-ea3e7042d96f'
 }
 
-const { data } = await axios.get('http://localhost:3000/users')
+const { data } = await UsersApi.getUsers()
 const router = useRouter()
 
 const goToUser = (id: number) => {
